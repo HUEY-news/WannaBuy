@@ -6,16 +6,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="16dp"
-    android:paddingVertical="16dp"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="32dp"
     tools:ignore="HardcodedText">
 
-    <ImageView
-        android:id="@+id/product_image"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:contentDescription="PRODUCT_IMAGE"
-        android:src="@tools:sample/avatars"
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/blue_400"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,7 +24,6 @@
         android:id="@+id/product_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:ellipsize="end"
         android:fontFamily="@font/font_mister_brush"
         android:maxLines="1"
@@ -31,35 +31,24 @@
         android:textColor="@color/blue_400"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/checkbox"
-        app:layout_constraintStart_toEndOf="@id/product_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkbox"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/product_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:ellipsize="end"
         android:fontFamily="@font/font_mister_brush"
         android:maxLines="2"
         android:text="Описание продукта"
         android:textColor="@color/blue_200"
         android:textSize="10sp"
-        app:layout_constraintEnd_toStartOf="@id/checkbox"
-        app:layout_constraintStart_toEndOf="@id/product_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkbox"
         app:layout_constraintTop_toBottomOf="@id/product_name"
         tools:ignore="SmallSp"
         tools:text="@tools:sample/lorem/random" />
-
-    <CheckBox
-        android:id="@+id/checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="@color/blue_400"
-        android:checked="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

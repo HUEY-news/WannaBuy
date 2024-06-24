@@ -13,6 +13,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_necessary_product" />
+        tools:listitem="@layout/item_database_product" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

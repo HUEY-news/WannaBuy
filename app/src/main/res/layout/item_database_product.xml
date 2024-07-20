@@ -6,27 +6,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingTop="8dp"
     android:paddingStart="16dp"
-    android:paddingVertical="8dp"
     android:paddingEnd="32dp"
     tools:ignore="HardcodedText">
 
     <ImageView
+        android:layout_marginStart="16dp"
         android:id="@+id/arrow_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="null"
         android:src="@drawable/arrow_add"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/product_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/product_name"
         app:tint="@color/blue_400" />
 
     <TextView
+        android:layout_marginStart="16dp"
         android:id="@+id/product_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:ellipsize="end"
         android:fontFamily="@font/font_mister_brush"
         android:maxLines="1"
@@ -34,9 +34,24 @@
         android:textColor="@color/blue_400"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/arrow_add"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/product_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/font_mister_brush"
+        android:maxLines="2"
+        android:text="Описание продукта"
+        android:textColor="@color/blue_200"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/product_name"
+        app:layout_constraintTop_toBottomOf="@id/product_name"
+        tools:ignore="SmallSp"
+        tools:text="@tools:sample/lorem/random" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

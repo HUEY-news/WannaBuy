@@ -11,8 +11,7 @@
         android:layout_height="match_parent"
         android:contentDescription="BACKGROUND"
         android:scaleType="centerCrop"
-        android:src="@drawable/background_root"
-        app:layout_aspectRatio="1" />
+        android:src="@drawable/background_root" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"

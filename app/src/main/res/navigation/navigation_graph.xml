@@ -9,5 +9,26 @@
         android:id="@+id/necessaryFragment"
         android:name="com.houston.buy.ui.NecessaryFragment"
         android:label="fragment_necessary"
-        tools:layout="@layout/fragment_necessary" />
+        tools:layout="@layout/fragment_necessary" >
+        <action
+            android:id="@+id/action_necessaryFragment_to_databaseFragment"
+            app:destination="@id/databaseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/databaseFragment"
+        android:name="com.houston.buy.ui.DatabaseFragment"
+        android:label="fragment_database"
+        tools:layout="@layout/fragment_database" >
+        <action
+            android:id="@+id/action_databaseFragment_to_addingFragment"
+            app:destination="@id/addingFragment" />
+        <action
+            android:id="@+id/action_databaseFragment_to_necessaryFragment"
+            app:destination="@id/necessaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addingFragment"
+        android:name="com.houston.buy.ui.AddingFragment"
+        android:label="fragment_adding"
+        tools:layout="@layout/fragment_adding" />
 </navigation>

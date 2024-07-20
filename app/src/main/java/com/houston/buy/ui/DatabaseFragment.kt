@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.houston.buy.R
-import com.houston.buy.databinding.FragmentNecessaryBinding
+import com.houston.buy.databinding.FragmentDatabaseBinding
 
-class NecessaryFragment : Fragment() {
-    private var _binding: FragmentNecessaryBinding? = null
+class DatabaseFragment : Fragment() {
+    private var _binding: FragmentDatabaseBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,14 +18,14 @@ class NecessaryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentNecessaryBinding.inflate(inflater, container, false)
+        _binding = FragmentDatabaseBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_necessaryFragment_to_databaseFragment)
+            findNavController().navigate(R.id.action_databaseFragment_to_addingFragment)
         }
     }
 }

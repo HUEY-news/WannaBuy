@@ -10,9 +10,9 @@ class AddingViewModel(
     private val interactor: ProductInteractor
 ): ViewModel() {
 
-    fun createNewProduct(id: String?, name: String, description: String?, image: Uri?) {
+    fun createNewProduct(name: String, description: String?, image: Uri?) {
         viewModelScope.launch {
-            interactor.addProduct(id, name, description, image)
+            interactor.addProduct(name, description, image)
         }
     }
 }

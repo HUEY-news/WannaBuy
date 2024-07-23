@@ -12,13 +12,9 @@ class ProductRepositoryImpl(
     private val converter: DatabaseConverter
 ) : ProductRepository {
 
-    override suspend fun addProduct(id: String?, name: String, description: String?, image: Uri?) {
-        val entity = ProductEntity(
-            id = id,
-            name = name,
-            description = description,
-            image = image.toString()
-        )
+    override suspend fun addProduct(name: String, description: String?, image: Uri?) {
+        val product = Product(name = name, description = description, image = image.toString())
+        val entity = converter.map(product)
         database.productDao().addProduct(entity)
     }
 

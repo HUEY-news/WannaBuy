@@ -79,7 +79,7 @@ class AddingFragment : Fragment() {
 
         binding.buttonCreate.setOnClickListener {
             productImageUri?.let { saveImageToPrivateStorage(it) }
-            viewModel.createNewProduct(null, productName, productDescription, productImageUri)
+            viewModel.createNewProduct(productName, productDescription, productImageUri)
             Toast.makeText(requireContext(), "Продукт [ $productName ] создан", Toast.LENGTH_SHORT).show()
             findNavController().navigateUp()
         }

@@ -24,6 +24,11 @@ class DatabaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.buttonBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         binding.buttonAdd.setOnClickListener {
             findNavController().navigate(R.id.action_databaseFragment_to_addingFragment)
         }

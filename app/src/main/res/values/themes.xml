@@ -5,5 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Buy" parent="Base.Theme.Buy" />
+    <style name="Theme.Buy" parent="Base.Theme.Buy">
+        <item name="android:statusBarColor">@color/blue_400</item>
+        <item name="android:navigationBarColor">@color/blue_400</item>
+    </style>
 </resources>

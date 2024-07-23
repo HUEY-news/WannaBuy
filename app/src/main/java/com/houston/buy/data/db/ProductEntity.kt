@@ -3,9 +3,10 @@ package com.houston.buy.data.db
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "product_table")
+@Entity(tableName = "products")
 data class ProductEntity(
-    @PrimaryKey(autoGenerate = true) val id: String?,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     val name: String,
-    val description: String?
+    val description: String?,
+    val image: String?
 )

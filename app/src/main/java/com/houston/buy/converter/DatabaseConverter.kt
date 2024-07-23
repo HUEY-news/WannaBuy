@@ -7,12 +7,14 @@ class DatabaseConverter {
     fun map(product: Product) = ProductEntity(
         id = product.id,
         name = product.name,
-        description = product.description
+        description = product.description,
+        image = product.image
     )
 
     fun map(entity: ProductEntity) = Product(
         id = entity.id,
         name = entity.name,
-        description = entity.description
+        description = entity.description,
+        image = entity.image
     )
 }

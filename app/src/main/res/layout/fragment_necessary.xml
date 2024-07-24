@@ -25,9 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/background_button_add"
+            android:background="@drawable/background_stroke_button"
             android:clickable="true"
-            android:src="@drawable/button_back" />
+            android:src="@drawable/icon_back" />
 
         <TextView
             android:id="@+id/header_text"
@@ -79,9 +79,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/background_button_add"
+        android:background="@drawable/background_stroke_button"
         android:contentDescription="BUTTON"
-        android:src="@drawable/button_add"
+        android:src="@drawable/icon_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

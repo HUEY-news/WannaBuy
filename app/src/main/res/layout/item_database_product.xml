@@ -16,7 +16,7 @@
         android:id="@+id/arrow_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/arrow_add"
+        android:src="@drawable/icon_arrow"
         app:layout_constraintBottom_toBottomOf="@id/product_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/product_name"

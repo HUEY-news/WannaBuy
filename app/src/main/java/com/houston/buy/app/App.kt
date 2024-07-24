@@ -1,4 +1,4 @@
-package com.houston.buy.data.app
+package com.houston.buy.app
 
 import android.app.Application
 import com.houston.buy.data.di.dataModule

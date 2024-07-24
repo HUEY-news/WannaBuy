@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.NecessaryFragment"
+    tools:context=".ui.ProductDatabaseFragment"
     tools:ignore="HardcodedText">
 
     <LinearLayout
@@ -37,7 +37,7 @@
             android:fontFamily="@font/font_mister_brush"
             android:gravity="center_vertical"
             android:paddingVertical="16dp"
-            android:text="Список покупок"
+            android:text="База продкутов"
             android:textColor="@color/blue_400"
             android:textSize="40sp" />
     </LinearLayout>
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/border_top"
-        tools:listitem="@layout/item_necessary_product" />
+        tools:listitem="@layout/item_database_product" />
 
     <View
         android:id="@+id/border_bottom"

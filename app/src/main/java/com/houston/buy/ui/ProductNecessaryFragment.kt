@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.houston.buy.R
-import com.houston.buy.databinding.FragmentNecessaryBinding
+import com.houston.buy.databinding.FragmentProductNecessaryBinding
 
-class NecessaryFragment : Fragment() {
-    private var _binding: FragmentNecessaryBinding? = null
+class ProductNecessaryFragment : Fragment() {
+    private var _binding: FragmentProductNecessaryBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +18,7 @@ class NecessaryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentNecessaryBinding.inflate(inflater, container, false)
+        _binding = FragmentProductNecessaryBinding.inflate(inflater, container, false)
         return binding.root
     }
 

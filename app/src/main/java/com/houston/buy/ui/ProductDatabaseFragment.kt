@@ -7,18 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.houston.buy.R
-import com.houston.buy.databinding.FragmentDatabaseBinding
+import com.houston.buy.databinding.FragmentProductDatabaseBinding
 
-class DatabaseFragment : Fragment() {
-    private var _binding: FragmentDatabaseBinding? = null
+class ProductDatabaseFragment : Fragment() {
+    private var _binding: FragmentProductDatabaseBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentDatabaseBinding.inflate(inflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        _binding = FragmentProductDatabaseBinding.inflate(inflater, container, false)
         return binding.root
     }
 

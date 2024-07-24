@@ -9,8 +9,8 @@ class ProductInteractorImpl(
     private val repository: ProductRepository
 ) : ProductInteractor {
 
-    override suspend fun addProduct(name: String, description: String?, image: Uri?) {
-        repository.addProduct(name, description, image)
+    override suspend fun createNewProduct(name: String, description: String?, image: Uri?) {
+        repository.createNewProduct(name, description, image)
     }
 
     override suspend fun removeProduct(product: Product) {

@@ -7,18 +7,18 @@
 
     <fragment
         android:id="@+id/necessaryFragment"
-        android:name="com.houston.buy.ui.NecessaryFragment"
+        android:name="com.houston.buy.ui.ProductNecessaryFragment"
         android:label="fragment_necessary"
-        tools:layout="@layout/fragment_necessary" >
+        tools:layout="@layout/fragment_product_necessary" >
         <action
             android:id="@+id/action_necessaryFragment_to_databaseFragment"
             app:destination="@id/databaseFragment" />
     </fragment>
     <fragment
         android:id="@+id/databaseFragment"
-        android:name="com.houston.buy.ui.DatabaseFragment"
+        android:name="com.houston.buy.ui.ProductDatabaseFragment"
         android:label="fragment_database"
-        tools:layout="@layout/fragment_database" >
+        tools:layout="@layout/fragment_product_database" >
         <action
             android:id="@+id/action_databaseFragment_to_addingFragment"
             app:destination="@id/addingFragment" />
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/addingFragment"
-        android:name="com.houston.buy.ui.AddingFragment"
+        android:name="com.houston.buy.ui.ProductCreationFragment"
         android:label="fragment_adding"
-        tools:layout="@layout/fragment_adding" />
+        tools:layout="@layout/fragment_product_creation" />
 </navigation>

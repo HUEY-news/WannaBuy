@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/necessaryFragment"
-        android:name="com.houston.buy.ui.ProductNecessaryFragment"
+        android:name="com.houston.buy.ui.productNecessary.ProductNecessaryFragment"
         android:label="fragment_necessary"
         tools:layout="@layout/fragment_product_necessary" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/databaseFragment"
-        android:name="com.houston.buy.ui.ProductDatabaseFragment"
+        android:name="com.houston.buy.ui.productDatabase.ProductDatabaseFragment"
         android:label="fragment_database"
         tools:layout="@layout/fragment_product_database" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/addingFragment"
-        android:name="com.houston.buy.ui.ProductCreationFragment"
+        android:name="com.houston.buy.ui.productCreation.ProductCreationFragment"
         android:label="fragment_adding"
         tools:layout="@layout/fragment_product_creation" />
 </navigation>

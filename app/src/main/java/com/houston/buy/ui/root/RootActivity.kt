@@ -1,4 +1,4 @@
-package com.houston.buy.ui
+package com.houston.buy.ui.root
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

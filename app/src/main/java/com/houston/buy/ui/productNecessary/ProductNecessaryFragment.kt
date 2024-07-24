@@ -1,4 +1,4 @@
-package com.houston.buy.ui
+package com.houston.buy.ui.productNecessary
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,14 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.houston.buy.R
-import com.houston.buy.databinding.FragmentProductDatabaseBinding
+import com.houston.buy.databinding.FragmentProductNecessaryBinding
 
-class ProductDatabaseFragment : Fragment() {
-    private var _binding: FragmentProductDatabaseBinding? = null
+class ProductNecessaryFragment : Fragment() {
+    private var _binding: FragmentProductNecessaryBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentProductDatabaseBinding.inflate(inflater, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentProductNecessaryBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -26,7 +30,7 @@ class ProductDatabaseFragment : Fragment() {
         }
 
         binding.buttonAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_databaseFragment_to_addingFragment)
+            findNavController().navigate(R.id.action_necessaryFragment_to_databaseFragment)
         }
     }
 }

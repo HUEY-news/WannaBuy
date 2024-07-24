@@ -1,4 +1,4 @@
-package com.houston.buy.ui
+package com.houston.buy.ui.productCreation
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

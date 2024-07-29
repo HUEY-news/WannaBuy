@@ -1,4 +1,4 @@
-package com.houston.buy.data.di
+package com.houston.buy.di
 
 import androidx.room.Room
 import com.houston.buy.converter.DatabaseConverter

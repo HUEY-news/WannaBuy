@@ -8,5 +8,6 @@ data class ProductEntity(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val name: String,
     val description: String?,
-    val image: String?
+    val image: String?,
+    val addingTime: Long = 0
 )

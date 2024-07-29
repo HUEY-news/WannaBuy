@@ -61,7 +61,7 @@
             android:layout_height="match_parent"
             android:foreground="@drawable/background_stroke_image"
             android:scaleType="centerInside"
-            android:src="@drawable/placeholder_image" />
+            android:src="@drawable/placeholder_product_image" />
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textfield.TextInputLayout

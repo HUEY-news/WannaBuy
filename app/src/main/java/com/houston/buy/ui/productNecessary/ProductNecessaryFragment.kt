@@ -13,11 +13,7 @@ class ProductNecessaryFragment : Fragment() {
     private var _binding: FragmentProductNecessaryBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentProductNecessaryBinding.inflate(inflater, container, false)
         return binding.root
     }

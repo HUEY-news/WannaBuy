@@ -1,4 +1,4 @@
-package com.houston.buy.data.di
+package com.houston.buy.di
 
 import com.houston.buy.presentation.ProductCreationViewModel
 import com.houston.buy.presentation.ProductDatabaseViewModel

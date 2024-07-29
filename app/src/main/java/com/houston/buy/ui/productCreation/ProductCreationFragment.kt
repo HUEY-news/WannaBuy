@@ -25,7 +25,6 @@ import java.io.FileOutputStream
 class ProductCreationFragment : Fragment() {
     private var _binding: FragmentProductCreationBinding? = null
     private val binding get() = _binding!!
-
     private val viewModel by viewModel<ProductCreationViewModel>()
 
     private var productImageUri: Uri? = null

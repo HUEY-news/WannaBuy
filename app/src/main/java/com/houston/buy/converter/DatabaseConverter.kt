@@ -8,7 +8,8 @@ class DatabaseConverter {
         id = product.id,
         name = product.name,
         description = product.description,
-        image = product.image
+        image = product.image,
+        addingTime = System.currentTimeMillis()
     )
 
     fun map(entity: ProductEntity) = Product(

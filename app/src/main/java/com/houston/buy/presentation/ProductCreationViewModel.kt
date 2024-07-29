@@ -6,13 +6,13 @@ import androidx.lifecycle.viewModelScope
 import com.houston.buy.domain.api.ProductInteractor
 import kotlinx.coroutines.launch
 
-class AddingViewModel(
+class ProductCreationViewModel(
     private val interactor: ProductInteractor
 ): ViewModel() {
 
     fun createNewProduct(name: String, description: String?, image: Uri?) {
         viewModelScope.launch {
-            interactor.addProduct(name, description, image)
+            interactor.createNewProduct(name, description, image)
         }
     }
 }

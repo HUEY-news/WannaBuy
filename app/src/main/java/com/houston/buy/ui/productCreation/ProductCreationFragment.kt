@@ -1,4 +1,4 @@
-package com.houston.buy.ui
+package com.houston.buy.ui.productCreation
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -16,28 +16,23 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.houston.buy.databinding.FragmentAddingBinding
-import com.houston.buy.presentation.AddingViewModel
+import com.houston.buy.databinding.FragmentProductCreationBinding
+import com.houston.buy.presentation.ProductCreationViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.File
 import java.io.FileOutputStream
 
-class AddingFragment : Fragment() {
-    private var _binding: FragmentAddingBinding? = null
+class ProductCreationFragment : Fragment() {
+    private var _binding: FragmentProductCreationBinding? = null
     private val binding get() = _binding!!
-
-    private val viewModel by viewModel<AddingViewModel>()
+    private val viewModel by viewModel<ProductCreationViewModel>()
 
     private var productImageUri: Uri? = null
     private var productName: String = ""
     private var productDescription: String = ""
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentAddingBinding.inflate(inflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        _binding = FragmentProductCreationBinding.inflate(inflater, container, false)
         return binding.root
     }
 

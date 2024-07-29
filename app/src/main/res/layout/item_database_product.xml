@@ -6,27 +6,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp"
     android:paddingStart="16dp"
+    android:paddingTop="8dp"
     android:paddingEnd="32dp"
     tools:ignore="HardcodedText">
 
     <ImageView
-        android:layout_marginStart="16dp"
         android:id="@+id/arrow_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/arrow_add"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/icon_arrow"
         app:layout_constraintBottom_toBottomOf="@id/product_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/product_name"
         app:tint="@color/blue_400" />
 
     <TextView
-        android:layout_marginStart="16dp"
         android:id="@+id/product_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:ellipsize="end"
         android:fontFamily="@font/font_mister_brush"
         android:maxLines="1"

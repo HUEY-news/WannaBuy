@@ -90,7 +90,7 @@ class ProductDatabaseFragment : Fragment() {
 
     private fun onClickDebounce(product: Product) {
         if (clickDebounce()) {
-            // TODO: Реализовать навигацию.
+            viewModel.removeProduct(product.id)
         }
     }
 

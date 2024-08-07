@@ -30,8 +30,7 @@ class ProductRepositoryImpl(
         database.productDao().addItemToList(entity)
     }
 
-    override suspend fun removeProduct(product: Product) {
-        val entity = converter.map(product)
-        database.productDao().removeItemFromList(entity)
+    override suspend fun removeProduct(id: Int) {
+        database.productDao().removeItemFromList(id)
     }
 }

@@ -38,4 +38,11 @@ class ProductDatabaseAdapter(
     override fun getItemCount(): Int {
         return itemList.size
     }
+
+    fun removeItem(position: Int): Product {
+        val item = itemList[position]
+        itemList.remove(item)
+        notifyItemRemoved(position)
+        return item
+    }
 }

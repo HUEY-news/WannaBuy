@@ -8,9 +8,13 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.houston.buy.R
 import com.houston.buy.databinding.FragmentProductDatabaseBinding
+import com.houston.buy.databinding.ItemDatabaseProductBinding
 import com.houston.buy.domain.model.Product
 import com.houston.buy.domain.model.ProductDatabaseScreenState
 import com.houston.buy.presentation.ProductDatabaseViewModel
@@ -32,7 +36,7 @@ class ProductDatabaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRecyclerViewAdapter()
+        setupRecyclerView()
         setupButtonListeners()
 
         viewModel.observeScreenState().observe(viewLifecycleOwner) { screenState ->
@@ -48,10 +52,28 @@ class ProductDatabaseFragment : Fragment() {
         viewModel.onResume()
     }
 
-    private fun setupRecyclerViewAdapter() {
+    private fun setupRecyclerView() {
         adapter = ProductDatabaseAdapter { product: Product -> onClickDebounce(product) }
         binding.recycler.adapter = adapter
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
+
+        val swipeCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            override fun onMove(recyclerView: RecyclerView, viewHolder: ViewHolder, target: ViewHolder): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+
+                if (direction == ItemTouchHelper.RIGHT) {
+                    val product = adapter?.removeItem(position)
+                    product?.let { viewModel.removeProduct(product.id) }
+                }
+            }
+        }
+
+        val swipeHelper = ItemTouchHelper(swipeCallback)
+        swipeHelper.attachToRecyclerView(binding.recycler)
     }
 
     private fun setupButtonListeners() {
@@ -90,7 +112,7 @@ class ProductDatabaseFragment : Fragment() {
 
     private fun onClickDebounce(product: Product) {
         if (clickDebounce()) {
-            viewModel.removeProduct(product.id)
+            // TODO: реализовать навигацию...
         }
     }
 

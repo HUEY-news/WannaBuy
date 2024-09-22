@@ -30,4 +30,11 @@ class ProductDatabaseViewModel(
                 }
         }
     }
+
+    fun removeProduct(id: Int) {
+        viewModelScope.launch {
+            interactor.removeProduct(id)
+            updateScreenState()
+        }
+    }
 }

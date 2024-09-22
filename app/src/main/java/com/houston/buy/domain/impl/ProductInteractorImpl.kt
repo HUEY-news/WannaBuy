@@ -18,7 +18,7 @@ class ProductInteractorImpl(
         repository.createNewProduct(name, description, image)
     }
 
-    override suspend fun removeProduct(product: Product) {
-        repository.removeProduct(product)
+    override suspend fun removeProduct(id: Int) {
+        repository.removeProduct(id)
     }
 }

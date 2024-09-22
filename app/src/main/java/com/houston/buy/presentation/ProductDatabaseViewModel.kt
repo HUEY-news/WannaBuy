@@ -8,9 +8,10 @@ import com.houston.buy.domain.api.ProductInteractor
 import com.houston.buy.domain.model.ProductDatabaseScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class ProductDatabaseViewModel(
+class ProductDatabaseViewModel @Inject constructor(
     private val interactor: ProductInteractor
 ) : ViewModel() {
 

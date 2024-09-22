@@ -6,8 +6,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.houston.buy.domain.api.ProductInteractor
 import com.houston.buy.domain.model.ProductDatabaseScreenState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 
+@HiltViewModel
 class ProductDatabaseViewModel(
     private val interactor: ProductInteractor
 ) : ViewModel() {

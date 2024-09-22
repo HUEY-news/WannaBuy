@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.houston.buy.R
 import com.houston.buy.databinding.FragmentProductDatabaseBinding
-import com.houston.buy.databinding.ItemDatabaseProductBinding
 import com.houston.buy.domain.model.Product
 import com.houston.buy.domain.model.ProductDatabaseScreenState
 import com.houston.buy.presentation.ProductDatabaseViewModel

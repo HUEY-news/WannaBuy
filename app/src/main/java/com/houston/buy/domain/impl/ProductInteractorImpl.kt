@@ -5,8 +5,9 @@ import com.houston.buy.domain.api.ProductInteractor
 import com.houston.buy.domain.api.ProductRepository
 import com.houston.buy.domain.model.Product
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class ProductInteractorImpl(
+class ProductInteractorImpl @Inject constructor(
     private val repository: ProductRepository
 ) : ProductInteractor {
 

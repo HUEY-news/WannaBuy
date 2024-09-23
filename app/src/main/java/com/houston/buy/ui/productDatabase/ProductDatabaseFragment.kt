@@ -17,10 +17,12 @@ import com.houston.buy.databinding.FragmentProductDatabaseBinding
 import com.houston.buy.domain.model.Product
 import com.houston.buy.domain.model.ProductDatabaseScreenState
 import com.houston.buy.presentation.ProductDatabaseViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class ProductDatabaseFragment : Fragment() {
     private var _binding: FragmentProductDatabaseBinding? = null
     private val binding get() = _binding!!

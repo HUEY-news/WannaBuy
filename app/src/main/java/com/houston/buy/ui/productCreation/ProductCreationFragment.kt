@@ -18,10 +18,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.houston.buy.databinding.FragmentProductCreationBinding
 import com.houston.buy.presentation.ProductCreationViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.File
 import java.io.FileOutputStream
 
+@AndroidEntryPoint
 class ProductCreationFragment : Fragment() {
     private var _binding: FragmentProductCreationBinding? = null
     private val binding get() = _binding!!
@@ -31,7 +33,11 @@ class ProductCreationFragment : Fragment() {
     private var productName: String = ""
     private var productDescription: String = ""
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentProductCreationBinding.inflate(inflater, container, false)
         return binding.root
     }

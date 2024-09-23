@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.houston.buy.R
 import com.houston.buy.databinding.FragmentProductNecessaryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProductNecessaryFragment : Fragment() {
     private var _binding: FragmentProductNecessaryBinding? = null
     private val binding get() = _binding!!

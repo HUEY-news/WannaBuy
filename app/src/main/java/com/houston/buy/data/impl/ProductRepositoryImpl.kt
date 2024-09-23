@@ -8,8 +8,9 @@ import com.houston.buy.domain.api.ProductRepository
 import com.houston.buy.domain.model.Product
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class ProductRepositoryImpl(
+class ProductRepositoryImpl @Inject constructor(
     private val database: ProductDatabase,
     private val converter: DatabaseConverter
 ) : ProductRepository {

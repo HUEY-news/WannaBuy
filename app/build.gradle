@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.google.gms.google.services)
 
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 
 }
 
@@ -35,13 +36,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    buildFeatures {
-        viewBinding = true
-    }
+    kotlinOptions { jvmTarget = '1.8' }
+    buildFeatures { viewBinding = true }
 
 }
 
@@ -58,25 +54,28 @@ dependencies {
 
     implementation libs.gson
 
-    implementation libs.koin.core
-    implementation libs.koin.android
-    testImplementation libs.koin.test
-
-    implementation libs.firebase.database
+    // DAGGER HILT
+    implementation(libs.hilt.android)
 
     // JETPACK NAVIGATION COMPONENT
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
-    implementation ("androidx.fragment:fragment-ktx:1.8.1")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.8.1")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.8.1")
+    implementation ("androidx.fragment:fragment-ktx:1.8.3")
 
     // COROUTINES
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
-    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.8.3")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
 
     // ROOM
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+
+    implementation libs.firebase.database
+
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
     kapt("androidx.room:room-compiler:2.6.1")
 
 }
+
+kapt { correctErrorTypes = true }

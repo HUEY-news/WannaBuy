@@ -4,9 +4,12 @@ import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.houston.buy.domain.api.ProductInteractor
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ProductCreationViewModel(
+@HiltViewModel
+class ProductCreationViewModel @Inject constructor(
     private val interactor: ProductInteractor
 ): ViewModel() {
 

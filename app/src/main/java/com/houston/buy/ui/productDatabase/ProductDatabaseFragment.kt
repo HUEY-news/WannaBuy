@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -17,14 +18,15 @@ import com.houston.buy.databinding.FragmentProductDatabaseBinding
 import com.houston.buy.domain.model.Product
 import com.houston.buy.domain.model.ProductDatabaseScreenState
 import com.houston.buy.presentation.ProductDatabaseViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class ProductDatabaseFragment : Fragment() {
     private var _binding: FragmentProductDatabaseBinding? = null
     private val binding get() = _binding!!
-    private val viewModel by viewModel<ProductDatabaseViewModel>()
+    private val viewModel: ProductDatabaseViewModel by viewModels()
 
     private var adapter: ProductDatabaseAdapter? = null
 

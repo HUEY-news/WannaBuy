@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
 import com.houston.buy.R
 import com.houston.buy.databinding.ActivityRootBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RootActivity : AppCompatActivity() {
     private var _binding: ActivityRootBinding? = null
     private val binding get() = _binding!!

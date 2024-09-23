@@ -1,37 +1,37 @@
 [versions]
-agp = "8.4.2"
-gson = "2.11.0"
-koinAndroid = "3.3.0"
-koinCore = "3.2.2"
-koinTest = "3.1.2"
-kotlin = "1.9.21"
+jetbrainsKotlinPluginVersion = "1.9.21"
+androidApplicationPluginVersion = "8.4.2"
 coreKtx = "1.13.1"
-junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
-appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.9.0"
+appcompat = "1.7.0"
+activity = "1.9.2"
 constraintlayout = "2.1.4"
+junitVersion = "1.2.1"
+junit = "4.13.2"
+espressoCore = "3.6.1"
+
+gsonLibraryVersion = "2.11.0"
+hiltAndroidPluginVersion = "2.51.1"
+hiltAndroidLibraryVersion = "2.51.1"
 googleGmsGoogleServices = "4.4.2"
 firebaseDatabase = "21.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
-koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinCore" }
-koin-test = { module = "io.insert-koin:koin-test", version.ref = "koinTest" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+gson = { module = "com.google.code.gson:gson", version.ref = "gsonLibraryVersion" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidLibraryVersion" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]
-android-application = { id = "com.android.application", version.ref = "agp" }
-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "androidApplicationPluginVersion" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "jetbrainsKotlinPluginVersion" }
+google-dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroidPluginVersion" }
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }

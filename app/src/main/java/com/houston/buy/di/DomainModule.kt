@@ -10,7 +10,7 @@ import dagger.hilt.android.components.ViewModelComponent
 
 @Module
 @InstallIn(ViewModelComponent::class)
-class InteractorModule {
+class DomainModule {
 
     @Provides
     fun provideProductInteractor(repository: ProductRepository): ProductInteractor {

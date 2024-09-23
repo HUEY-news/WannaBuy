@@ -11,14 +11,8 @@ junit = "4.13.2"
 espressoCore = "3.6.1"
 
 gsonLibraryVersion = "2.11.0"
-
-koinAndroid = "3.3.0"
-koinCore = "3.2.2"
-koinTest = "3.1.2"
-
 hiltAndroidPluginVersion = "2.51.1"
 hiltAndroidLibraryVersion = "2.51.1"
-
 googleGmsGoogleServices = "4.4.2"
 firebaseDatabase = "21.0.0"
 
@@ -33,13 +27,7 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 
 gson = { module = "com.google.code.gson:gson", version.ref = "gsonLibraryVersion" }
-
-koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
-koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinCore" }
-koin-test = { module = "io.insert-koin:koin-test", version.ref = "koinTest" }
-
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidLibraryVersion" }
-
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]

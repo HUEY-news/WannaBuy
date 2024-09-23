@@ -54,12 +54,7 @@ dependencies {
 
     implementation libs.gson
 
-    // KOIN
-    implementation libs.koin.core
-    implementation libs.koin.android
-    testImplementation libs.koin.test
-
-    // HILT
+    // DAGGER HILT
     implementation(libs.hilt.android)
 
     // JETPACK NAVIGATION COMPONENT

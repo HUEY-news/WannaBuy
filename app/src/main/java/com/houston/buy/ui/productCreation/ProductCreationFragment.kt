@@ -15,11 +15,11 @@ import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.houston.buy.databinding.FragmentProductCreationBinding
 import com.houston.buy.presentation.ProductCreationViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.File
 import java.io.FileOutputStream
 
@@ -27,7 +27,7 @@ import java.io.FileOutputStream
 class ProductCreationFragment : Fragment() {
     private var _binding: FragmentProductCreationBinding? = null
     private val binding get() = _binding!!
-    private val viewModel by viewModel<ProductCreationViewModel>()
+    private val viewModel: ProductCreationViewModel by viewModels()
 
     private var productImageUri: Uri? = null
     private var productName: String = ""

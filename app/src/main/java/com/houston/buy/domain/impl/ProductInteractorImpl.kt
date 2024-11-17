@@ -15,7 +15,7 @@ class ProductInteractorImpl @Inject constructor(
         return repository.getProductList()
     }
 
-    override suspend fun createNewProduct(name: String, description: String?, image: Uri?) {
+    override suspend fun createNewProduct(name: String, description: String, image: Uri?) {
         repository.createNewProduct(name, description, image)
     }
 

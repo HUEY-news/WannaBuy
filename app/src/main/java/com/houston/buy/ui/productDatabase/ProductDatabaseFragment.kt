@@ -59,9 +59,7 @@ class ProductDatabaseFragment : Fragment() {
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
 
         val swipeCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
-            override fun onMove(recyclerView: RecyclerView, viewHolder: ViewHolder, target: ViewHolder): Boolean {
-                return false
-            }
+            override fun onMove(recyclerView: RecyclerView, viewHolder: ViewHolder, target: ViewHolder): Boolean = false
 
             override fun onSwiped(viewHolder: ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition

@@ -13,7 +13,7 @@ class ProductCreationViewModel @Inject constructor(
     private val interactor: ProductInteractor
 ): ViewModel() {
 
-    fun createNewProduct(name: String, description: String?, image: Uri?) {
+    fun createNewProduct(name: String, description: String, image: Uri?) {
         viewModelScope.launch {
             interactor.createNewProduct(name, description, image)
         }

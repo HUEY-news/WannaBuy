@@ -25,7 +25,7 @@ class ProductRepositoryImpl @Inject constructor(
         return entityList.map { entity: ProductEntity -> converter.map(entity) }
     }
 
-    override suspend fun createNewProduct(name: String, description: String?, image: Uri?) {
+    override suspend fun createNewProduct(name: String, description: String, image: Uri?) {
         val product = Product(name = name, description = description, image = image.toString())
         val entity = converter.map(product)
         database.productDao().addItemToList(entity)

@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface ProductInteractor {
     fun getProductList(): Flow<List<Product>>
-    suspend fun createNewProduct(name: String, description: String?, image: Uri?)
+    suspend fun createNewProduct(name: String, description: String, image: Uri?)
     suspend fun removeProduct(id: Int)
 }

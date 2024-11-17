@@ -2,6 +2,7 @@ package com.houston.buy.ui.productDatabase
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.houston.buy.databinding.ItemDatabaseProductBinding
 import com.houston.buy.domain.model.Product
@@ -9,12 +10,13 @@ import com.houston.buy.domain.model.Product
 class ProductDatabaseAdapter(
     private val onItemClick: (product: Product) -> Unit
 ) : RecyclerView.Adapter<ProductDatabaseViewHolder>(){
-    private val itemList = mutableListOf<Product>()
+    private var itemList: List<Product> = emptyList()
 
     fun setItems(items: List<Product>) {
-        itemList.clear()
-        itemList.addAll(items)
-        notifyDataSetChanged()
+        val diffCallback = ProductDatabaseDiffCallback(itemList, items)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        itemList = items
+        diffResult.dispatchUpdatesTo(this)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductDatabaseViewHolder {
@@ -41,7 +43,8 @@ class ProductDatabaseAdapter(
 
     fun removeItem(position: Int): Product {
         val item = itemList[position]
-        itemList.remove(item)
+        val newList = itemList.filterIndexed { index, _ -> index != position }
+        itemList = newList
         notifyItemRemoved(position)
         return item
     }

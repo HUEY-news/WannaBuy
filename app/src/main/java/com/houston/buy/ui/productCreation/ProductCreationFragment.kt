@@ -33,22 +33,18 @@ class ProductCreationFragment : Fragment() {
     private var productName: String = ""
     private var productDescription: String = ""
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentProductCreationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupButtonListeners()
+        setupInputListeners()
+    }
 
-        binding.buttonBack.setOnClickListener {
-            findNavController().navigateUp()
-        }
-
+    private fun setupInputListeners() {
         binding.productNameInput.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(input: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(input: CharSequence?, start: Int, before: Int, count: Int) {}
@@ -65,6 +61,10 @@ class ProductCreationFragment : Fragment() {
                 productDescription = input.toString()
             }
         })
+    }
+
+    private fun setupButtonListeners() {
+        binding.buttonBack.setOnClickListener { findNavController().navigateUp() }
 
         val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
             uri?.let {
@@ -75,7 +75,11 @@ class ProductCreationFragment : Fragment() {
         }
 
         binding.productImage.setOnClickListener {
-            pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+            pickMedia.launch(
+                PickVisualMediaRequest(
+                    ActivityResultContracts.PickVisualMedia.ImageOnly
+                )
+            )
         }
 
         binding.buttonCreate.setOnClickListener {

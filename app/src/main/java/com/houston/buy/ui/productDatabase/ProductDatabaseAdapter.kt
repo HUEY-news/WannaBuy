@@ -12,10 +12,10 @@ class ProductDatabaseAdapter(
 ) : RecyclerView.Adapter<ProductDatabaseViewHolder>(){
     private var itemList: List<Product> = emptyList()
 
-    fun setItems(items: List<Product>) {
-        val diffCallback = ProductDatabaseDiffCallback(itemList, items)
+    fun submitList(list: List<Product>) {
+        val diffCallback = ProductDatabaseDiffCallback(itemList, list)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
-        itemList = items
+        itemList = list
         diffResult.dispatchUpdatesTo(this)
     }
 
@@ -32,20 +32,15 @@ class ProductDatabaseAdapter(
     }
 
     override fun onBindViewHolder(holder: ProductDatabaseViewHolder, position: Int) {
-        itemList.getOrNull(position)?.let { product: Product ->
-            holder.bind(product)
-        }
+        itemList.getOrNull(position)?.let { product: Product -> holder.bind(product) }
     }
 
-    override fun getItemCount(): Int {
-        return itemList.size
-    }
+    override fun getItemCount(): Int = itemList.size
 
     fun removeItem(position: Int): Product {
         val item = itemList[position]
         val newList = itemList.filterIndexed { index, _ -> index != position }
-        itemList = newList
-        notifyItemRemoved(position)
+        submitList(newList)
         return item
     }
 }

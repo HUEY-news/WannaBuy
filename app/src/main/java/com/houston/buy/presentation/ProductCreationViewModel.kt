@@ -11,7 +11,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ProductCreationViewModel @Inject constructor(
     private val interactor: ProductInteractor
-): ViewModel() {
+) : ViewModel() {
 
     fun createNewProduct(name: String, description: String, image: Uri?) {
         viewModelScope.launch {

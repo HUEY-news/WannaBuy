@@ -37,7 +37,7 @@
             android:fontFamily="@font/font_mister_brush"
             android:gravity="center_vertical"
             android:paddingVertical="16dp"
-            android:text="База продкутов"
+            android:text="База продуктов"
             android:textColor="@color/blue_400"
             android:textSize="40sp" />
     </LinearLayout>

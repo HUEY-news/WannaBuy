@@ -20,16 +20,15 @@ class ProductDatabaseViewModel @Inject constructor(
     private fun renderState(state: ProductDatabaseScreenState) { currentScreenState.postValue(state) }
 
     init { updateScreenState() }
-
     fun onResume() { updateScreenState() }
 
     private fun updateScreenState() {
         viewModelScope.launch {
             interactor
                 .getProductList()
-                .collect { data ->
-                    if (data.isEmpty()) renderState(ProductDatabaseScreenState.Empty)
-                    else renderState(ProductDatabaseScreenState.Content(data))
+                .collect { list ->
+                    if (list.isEmpty()) renderState(ProductDatabaseScreenState.Empty)
+                    else renderState(ProductDatabaseScreenState.Content(list))
                 }
         }
     }

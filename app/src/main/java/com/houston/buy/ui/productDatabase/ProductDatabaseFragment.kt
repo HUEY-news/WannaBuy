@@ -76,13 +76,8 @@ class ProductDatabaseFragment : Fragment() {
     }
 
     private fun setupButtonListeners() {
-        binding.buttonBack.setOnClickListener {
-            findNavController().navigateUp()
-        }
-
-        binding.buttonAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_databaseFragment_to_addingFragment)
-        }
+        binding.buttonBack.setOnClickListener { findNavController().navigateUp() }
+        binding.buttonAdd.setOnClickListener { findNavController().navigate(R.id.action_databaseFragment_to_addingFragment) }
     }
 
     private fun showContent(data: List<Product>) {
@@ -97,17 +92,9 @@ class ProductDatabaseFragment : Fragment() {
         showProductList(false)
     }
 
-    private fun updateProductList(data: List<Product>) {
-        adapter?.setItems(data)
-    }
-
-    private fun showProductList(isVisible: Boolean) {
-        binding.recycler.isVisible = isVisible
-    }
-
-    private fun showEmptyPlaceholder(isVisible: Boolean) {
-        binding.placeholderContainer.isVisible = isVisible
-    }
+    private fun updateProductList(list: List<Product>) { adapter?.submitList(list) }
+    private fun showProductList(isVisible: Boolean) { binding.recycler.isVisible = isVisible }
+    private fun showEmptyPlaceholder(isVisible: Boolean) { binding.placeholderContainer.isVisible = isVisible }
 
     private fun onClickDebounce(product: Product) {
         if (clickDebounce()) {

@@ -23,12 +23,17 @@
             android:id="@+id/action_databaseFragment_to_addingFragment"
             app:destination="@id/addingFragment" />
         <action
-            android:id="@+id/action_databaseFragment_to_necessaryFragment"
-            app:destination="@id/necessaryFragment" />
+            android:id="@+id/action_databaseFragment_to_productInfoFragment"
+            app:destination="@id/productInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/addingFragment"
         android:name="com.houston.buy.ui.productCreation.ProductCreationFragment"
         android:label="fragment_adding"
         tools:layout="@layout/fragment_product_creation" />
+    <fragment
+        android:id="@+id/productInfoFragment"
+        android:name="com.houston.buy.ui.productInfo.ProductInfoFragment"
+        android:label="fragment_product_info"
+        tools:layout="@layout/fragment_product_info" />
 </navigation>

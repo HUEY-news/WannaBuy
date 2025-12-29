@@ -1,41 +1,55 @@
 [versions]
+
+# androidx libraries
 androidxActivityVersion = "1.12.2"
 androidxAppcompatVersion = "1.7.1"
-googleCodeGsonVersion = "2.13.2"
 androidxConstraintlayoutVersion = "2.2.1"
 androidxCoreVersion = "1.17.0"
 androidxFragmentVersion = "1.8.9"
 androidxNavigationFragmentVersion = "2.9.6"
 androidxNavigationUiVersion = "2.9.6"
-androidxTestEspressoVersion = "3.7.0"
-androidxTestJunitVersion = "1.3.0"
+
+# google libraries
 googleAndroidMaterialVersion = "1.13.0"
+googleCodeGsonVersion = "2.13.2"
 googleDaggerHiltVersion = "2.57.2"
 googleFirebaseDatabaseVersion = "22.0.1"
+
+# test libraries
+androidxTestEspressoVersion = "3.7.0"
+androidxTestJunitVersion = "1.3.0"
 junitVersion = "4.13.2"
 
+# plugins
 androidApplicationPluginVersion = "8.13.2"
 googleDaggerHiltPluginVersion = "2.57.2"
 googleMobileServicesPluginVersion = "4.4.4"
 jetbrainsKotlinPluginVersion = "2.3.0"
 
 [libraries]
+
+# androidx
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "androidxActivityVersion" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppcompatVersion" }
-google-code-gson = { module = "com.google.code.gson:gson", version.ref = "googleCodeGsonVersion" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidxConstraintlayoutVersion" }
 androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreVersion" }
 androidx-fragment = { module = "androidx.fragment:fragment-ktx", version.ref = "androidxFragmentVersion" }
 androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androidxNavigationFragmentVersion" }
 androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidxNavigationUiVersion" }
-androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspressoVersion" }
-androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestJunitVersion" }
+
+# google
 google-android-material = { group = "com.google.android.material", name = "material", version.ref = "googleAndroidMaterialVersion" }
 google-dagger-hilt = { module = "com.google.dagger:hilt-android", version.ref = "googleDaggerHiltVersion" }
 google-firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "googleFirebaseDatabaseVersion" }
+google-code-gson = { module = "com.google.code.gson:gson", version.ref = "googleCodeGsonVersion" }
+
+# test
+androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspressoVersion" }
+androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestJunitVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junitVersion" }
 
 [plugins]
+
 android-application-plugin = { id = "com.android.application", version.ref = "androidApplicationPluginVersion" }
 google-dagger-hilt-plugin = { id = "com.google.dagger.hilt.android", version.ref = "googleDaggerHiltPluginVersion" }
 google-mobile-services-plugin = { id = "com.google.gms.google-services", version.ref = "googleMobileServicesPluginVersion" }

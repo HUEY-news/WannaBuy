@@ -52,11 +52,9 @@ dependencies {
     implementation (libs.androidx.navigation.fragment)
     implementation (libs.androidx.navigation.ui)
     implementation (libs.androidx.fragment)
-
-    // COROUTINES
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0")
-    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0")
+    implementation (libs.jetbrains.kotlinx.coroutines)
+    implementation (libs.androidx.lifecycle.viewmodel)
+    implementation (libs.androidx.lifecycle.runtime)
 
     // ROOM
     implementation("androidx.room:room-runtime:2.8.4")

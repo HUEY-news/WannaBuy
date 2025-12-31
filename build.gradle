@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application.plugin) apply false
-    alias(libs.plugins.google.dagger.hilt.plugin) apply false
     alias(libs.plugins.google.mobile.services.plugin) apply false
     alias(libs.plugins.jetbrains.kotlin.plugin) apply false
 }

@@ -1,10 +1,8 @@
 plugins {
     alias(libs.plugins.android.application.plugin)
+    alias(libs.plugins.google.devtools.ksp)
     alias(libs.plugins.google.mobile.services.plugin)
     alias(libs.plugins.jetbrains.kotlin.plugin)
-
-    id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -46,18 +44,15 @@ dependencies {
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui
     implementation libs.androidx.room
+    ksp libs.androidx.room.compiler
     implementation libs.androidx.room.runtime
     androidTestImplementation libs.androidx.test.espresso
     androidTestImplementation libs.androidx.test.junit
     implementation libs.google.android.material
     implementation libs.google.code.gson
     implementation libs.google.dagger.hilt
+    ksp libs.google.dagger.hilt.compiler
     implementation libs.google.firebase.database
     implementation libs.jetbrains.kotlinx.coroutines
     testImplementation libs.junit
-
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
-    kapt("androidx.room:room-compiler:2.6.1")
 }
-
-kapt { correctErrorTypes = true }

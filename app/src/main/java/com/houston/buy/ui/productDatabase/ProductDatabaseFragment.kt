@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,8 +18,6 @@ import com.houston.buy.domain.model.Product
 import com.houston.buy.domain.model.ProductDatabaseScreenState
 import com.houston.buy.presentation.ProductDatabaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ProductDatabaseFragment : Fragment() {
@@ -54,7 +51,7 @@ class ProductDatabaseFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = ProductDatabaseAdapter { product: Product -> onClickDebounce(product) }
+        adapter = ProductDatabaseAdapter {}
         binding.recycler.adapter = adapter
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
 
@@ -62,7 +59,7 @@ class ProductDatabaseFragment : Fragment() {
             override fun onMove(recyclerView: RecyclerView, viewHolder: ViewHolder, target: ViewHolder): Boolean = false
 
             override fun onSwiped(viewHolder: ViewHolder, direction: Int) {
-                val position = viewHolder.adapterPosition
+                val position = viewHolder.bindingAdapterPosition
 
                 if (direction == ItemTouchHelper.RIGHT) {
                     val product = adapter?.removeItem(position)
@@ -94,29 +91,5 @@ class ProductDatabaseFragment : Fragment() {
 
     private fun updateProductList(list: List<Product>) { adapter?.submitList(list) }
     private fun showProductList(isVisible: Boolean) { binding.recycler.isVisible = isVisible }
-    private fun showEmptyPlaceholder(isVisible: Boolean) { binding.placeholderContainer.isVisible = isVisible }
-
-    private fun onClickDebounce(product: Product) {
-        if (clickDebounce()) {
-            // TODO: реализовать навигацию...
-        }
-    }
-
-    private var isClickAllowed = true
-
-    private fun clickDebounce(): Boolean {
-        val current = isClickAllowed
-        if (isClickAllowed) {
-            isClickAllowed = false
-            lifecycleScope.launch {
-                delay(CLICK_DEBOUNCE_DELAY)
-                isClickAllowed = true
-            }
-        }
-        return current
-    }
-
-    companion object {
-        private const val CLICK_DEBOUNCE_DELAY = 1000L
-    }
+    private fun showEmptyPlaceholder(isVisible: Boolean) { binding.placeholder.isVisible = isVisible }
 }

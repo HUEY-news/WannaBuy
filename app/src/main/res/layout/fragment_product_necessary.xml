@@ -27,6 +27,7 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/background_stroke_button"
             android:clickable="true"
+            android:contentDescription="BUTTON BACK"
             android:src="@drawable/icon_back" />
 
         <TextView
@@ -39,7 +40,7 @@
             android:paddingVertical="16dp"
             android:text="Список покупок"
             android:textColor="@color/blue_400"
-            android:textSize="40sp" />
+            android:textSize="30sp" />
     </LinearLayout>
 
     <View

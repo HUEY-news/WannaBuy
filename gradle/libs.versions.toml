@@ -46,9 +46,9 @@ androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui-
 
 # google
 google-android-material = { group = "com.google.android.material", name = "material", version.ref = "googleAndroidMaterialVersion" }
+google-code-gson = { module = "com.google.code.gson:gson", version.ref = "googleCodeGsonVersion" }
 google-dagger-hilt = { module = "com.google.dagger:hilt-android", version.ref = "googleDaggerHiltVersion" }
 google-firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "googleFirebaseDatabaseVersion" }
-google-code-gson = { module = "com.google.code.gson:gson", version.ref = "googleCodeGsonVersion" }
 
 # test
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxTestEspressoVersion" }

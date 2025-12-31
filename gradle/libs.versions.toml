@@ -23,6 +23,7 @@ junitVersion = "4.13.2"
 # plugins
 androidApplicationPluginVersion = "8.13.2"
 googleMobileServicesPluginVersion = "4.4.4"
+googleKspPluginVersion = "1.5.30-1.0.0"
 jetbrainsKotlinPluginVersion = "2.3.0"
 
 [libraries]
@@ -52,5 +53,6 @@ junit = { group = "junit", name = "junit", version.ref = "junitVersion" }
 [plugins]
 
 android-application-plugin = { id = "com.android.application", version.ref = "androidApplicationPluginVersion" }
+google-ksp-plugin = { id = "com.google.devtools.ksp", version.ref = "googleKspPluginVersion" }
 google-mobile-services-plugin = { id = "com.google.gms.google-services", version.ref = "googleMobileServicesPluginVersion" }
 jetbrains-kotlin-plugin = { id = "org.jetbrains.kotlin.android", version.ref = "jetbrainsKotlinPluginVersion" }

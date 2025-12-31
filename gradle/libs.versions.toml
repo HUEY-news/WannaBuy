@@ -23,9 +23,9 @@ junitVersion = "4.13.2"
 # plugins
 androidApplicationPluginVersion = "8.13.2"
 googleDaggerHiltPluginVersion = "2.57.2"
-googleKspPluginVersion = "2.1.0-1.0.29"
+googleKspPluginVersion = "2.3.0"
 googleMobileServicesPluginVersion = "4.4.4"
-kotlinPluginVersion = "2.1.0"
+kotlinPluginVersion = "2.3.0"
 
 [libraries]
 

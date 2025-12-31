@@ -1,0 +1,25 @@
+package com.houston.buy.domain.impl
+
+import android.net.Uri
+import com.houston.buy.domain.api.ProductInteractor
+import com.houston.buy.domain.api.ProductRepository
+import com.houston.buy.domain.model.Product
+import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
+
+class ProductInteractorImpl @Inject constructor(
+    private val repository: ProductRepository
+) : ProductInteractor {
+
+    override fun getProductList(): Flow<List<Product>> {
+        return repository.getProductList()
+    }
+
+    override suspend fun createNewProduct(name: String, description: String, image: Uri?) {
+        repository.createNewProduct(name, description, image)
+    }
+
+    override suspend fun removeProduct(id: Int) {
+        repository.removeProduct(id)
+    }
+}

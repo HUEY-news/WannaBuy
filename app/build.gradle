@@ -1,8 +1,9 @@
 plugins {
     alias libs.plugins.android.application.plugin
+    alias libs.plugins.google.dagger.hilt.plugin
     alias libs.plugins.google.ksp.plugin
     alias libs.plugins.google.mobile.services.plugin
-    alias libs.plugins.jetbrains.kotlin.plugin
+    alias libs.plugins.kotlin.plugin
 }
 
 android {

@@ -1,8 +1,10 @@
 <resources>
+
     <style name="Base.Theme.WannaBuy" parent="Theme.Material3.DayNight.NoActionBar"/>
 
     <style name="Theme.WannaBuy" parent="Base.Theme.WannaBuy">
         <item name="android:statusBarColor">@color/blue_400</item>
         <item name="android:navigationBarColor">@color/blue_400</item>
     </style>
+
 </resources>

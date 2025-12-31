@@ -27,6 +27,7 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/background_stroke_button"
             android:clickable="true"
+            android:contentDescription="BUTTON BACK"
             android:src="@drawable/icon_back" />
 
         <TextView
@@ -39,7 +40,7 @@
             android:paddingVertical="16dp"
             android:text="База продуктов"
             android:textColor="@color/blue_400"
-            android:textSize="40sp" />
+            android:textSize="30sp" />
     </LinearLayout>
 
     <View
@@ -85,36 +86,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:tint="@color/blue_400" />
 
-    <LinearLayout
-        android:id="@+id/placeholder_container"
+    <TextView
+        android:id="@+id/placeholder_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginVertical="8dp"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/font_mister_brush"
+        android:gravity="center"
+        android:text="Список пуст"
+        android:textColor="@color/blue_400"
+        android:textSize="24sp"
         android:visibility="gone"
+        app:drawableTint="@color/blue_400"
+        app:drawableTopCompat="@drawable/placeholder_empty_database"
         app:layout_constraintBottom_toTopOf="@id/border_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/border_top">
-
-        <ImageView
-            android:id="@+id/placeholder_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/placeholder_empty_database"
-            app:tint="@color/blue_400" />
-
-        <TextView
-            android:id="@+id/placeholder_message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginVertical="8dp"
-            android:fontFamily="@font/font_mister_brush"
-            android:gravity="center"
-            android:text="Список пуст"
-            android:textColor="@color/blue_400"
-            android:textSize="24sp" />
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/border_top" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

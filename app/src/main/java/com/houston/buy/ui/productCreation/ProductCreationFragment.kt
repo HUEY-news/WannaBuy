@@ -19,6 +19,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.houston.buy.databinding.FragmentProductCreationBinding
 import com.houston.buy.presentation.ProductCreationViewModel
+import com.houston.buy.tools.onClick
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
 import java.io.FileOutputStream
@@ -64,7 +65,7 @@ class ProductCreationFragment : Fragment() {
     }
 
     private fun setupButtonListeners() {
-        binding.buttonBack.setOnClickListener { findNavController().navigateUp() }
+        binding.buttonBack.onClick { findNavController().navigateUp() }
 
         val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
             uri?.let {
@@ -74,7 +75,7 @@ class ProductCreationFragment : Fragment() {
             }
         }
 
-        binding.productImage.setOnClickListener {
+        binding.productImage.onClick {
             pickMedia.launch(
                 PickVisualMediaRequest(
                     ActivityResultContracts.PickVisualMedia.ImageOnly
@@ -82,7 +83,7 @@ class ProductCreationFragment : Fragment() {
             )
         }
 
-        binding.buttonCreate.setOnClickListener {
+        binding.buttonCreate.onClick {
             productImageUri?.let { saveImageToPrivateStorage(it) }
             viewModel.createNewProduct(productName, productDescription, productImageUri)
             Toast.makeText(requireContext(), "Продукт [ $productName ] создан", Toast.LENGTH_SHORT).show()

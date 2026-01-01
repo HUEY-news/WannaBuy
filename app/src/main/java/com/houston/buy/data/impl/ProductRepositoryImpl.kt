@@ -17,7 +17,7 @@ class ProductRepositoryImpl @Inject constructor(
 
     override fun getProductList(): Flow<List<Product>> = flow {
         val entityList = database.productDao().getItemList()
-        val productList = convertFromEntity(entityList.sortedByDescending { entity: ProductEntity -> entity.addingTime })
+        val productList = convertFromEntity(entityList.sortedBy { entity: ProductEntity -> entity.name })
         emit(productList)
     }
 

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.houston.buy.R
 import com.houston.buy.databinding.FragmentProductNecessaryBinding
+import com.houston.buy.tools.onClick
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,11 +24,11 @@ class ProductNecessaryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonBack.setOnClickListener {
+        binding.buttonBack.onClick {
             findNavController().navigateUp()
         }
 
-        binding.buttonAdd.setOnClickListener {
+        binding.buttonAdd.onClick {
             findNavController().navigate(R.id.action_necessaryFragment_to_databaseFragment)
         }
     }

@@ -17,6 +17,7 @@ import com.houston.buy.databinding.FragmentProductDatabaseBinding
 import com.houston.buy.domain.model.Product
 import com.houston.buy.domain.model.ProductDatabaseScreenState
 import com.houston.buy.presentation.ProductDatabaseViewModel
+import com.houston.buy.tools.onClick
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -60,12 +61,31 @@ class ProductDatabaseFragment : Fragment() {
 
             override fun onSwiped(viewHolder: ViewHolder, direction: Int) {
                 val position = viewHolder.bindingAdapterPosition
+                val product = adapter?.removeItem(position)
+                product?.let { viewModel.removeProduct(product.id) }
+            }
 
-                if (direction == ItemTouchHelper.RIGHT) {
-                    val product = adapter?.removeItem(position)
-                    product?.let { viewModel.removeProduct(product.id) }
+            override fun onChildDraw(
+                canvas: android.graphics.Canvas,
+                recyclerView: RecyclerView,
+                viewHolder: ViewHolder,
+                dX: Float,
+                dY: Float,
+                actionState: Int,
+                isCurrentlyActive: Boolean
+            ) {
+                if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE && dX > 0) {
+                    val alpha = 1.0f - (dX / viewHolder.itemView.width.toFloat())
+                    viewHolder.itemView.alpha = alpha
+                    viewHolder.itemView.translationX = dX
+                } else if (dX == 0f) {
+                    viewHolder.itemView.alpha = 1.0f
+                    super.onChildDraw(canvas, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                } else {
+                    super.onChildDraw(canvas, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
                 }
             }
+
         }
 
         val swipeHelper = ItemTouchHelper(swipeCallback)
@@ -73,8 +93,8 @@ class ProductDatabaseFragment : Fragment() {
     }
 
     private fun setupButtonListeners() {
-        binding.buttonBack.setOnClickListener { findNavController().navigateUp() }
-        binding.buttonAdd.setOnClickListener { findNavController().navigate(R.id.action_databaseFragment_to_addingFragment) }
+        binding.buttonBack.onClick { findNavController().navigateUp() }
+        binding.buttonAdd.onClick { findNavController().navigate(R.id.action_databaseFragment_to_addingFragment) }
     }
 
     private fun showContent(data: List<Product>) {

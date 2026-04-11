@@ -100,7 +100,7 @@
         android:textSize="24sp"
         android:visibility="gone"
         app:drawableTint="@color/blue_400"
-        app:drawableTopCompat="@drawable/placeholder_empty_database"
+        app:drawableTopCompat="@drawable/placeholder_empty_list"
         app:layout_constraintBottom_toTopOf="@id/border_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

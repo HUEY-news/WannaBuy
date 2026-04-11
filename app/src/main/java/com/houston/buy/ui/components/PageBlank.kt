@@ -10,12 +10,11 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.houston.buy.ui.theme.GridCyan
-import com.houston.buy.ui.theme.MarginRed
 import com.houston.buy.ui.theme.PaperWhite
 import com.houston.buy.ui.theme.Theme
 
 @Composable
-fun RightPage(
+fun PageBlank(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {
@@ -48,14 +47,6 @@ fun RightPage(
                     )
                     y += cellSize
                 }
-
-                val marginX = size.width - (cellSize * 2.5f)
-                drawLine(
-                    color = MarginRed,
-                    start = Offset(marginX, 0f),
-                    end = Offset(marginX, size.height),
-                    strokeWidth = 2.dp.toPx()
-                )
             }
     ) {
         content()
@@ -66,6 +57,6 @@ fun RightPage(
 @Composable
 private fun Preview() {
     Theme {
-        RightPage {}
+        PageBlank {}
     }
 }

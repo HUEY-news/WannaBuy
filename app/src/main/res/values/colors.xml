@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
 
     <color name="blue_100">#C5CAE9</color>
     <color name="blue_200">#9FA8DA</color>
@@ -12,4 +11,8 @@
     <color name="blue_700">#303F9F</color>
     <color name="blue_800">#283593</color>
     <color name="blue_900">#1A237E</color>
+
+    <color name="paper_white">#FFFFFF</color>
+    <color name="margin_red">#FFB7B7</color>
+    <color name="grid_cyan">#E0F7FA</color>
 </resources>

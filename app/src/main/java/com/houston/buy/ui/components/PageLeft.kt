@@ -15,7 +15,7 @@ import com.houston.buy.ui.theme.PaperWhite
 import com.houston.buy.ui.theme.Theme
 
 @Composable
-fun LeftPage(
+fun PageLeft(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {
@@ -66,6 +66,6 @@ fun LeftPage(
 @Composable
 private fun Preview() {
     Theme {
-        LeftPage {}
+        PageLeft {}
     }
 }

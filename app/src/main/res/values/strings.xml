@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WannaBuy</string>
+
+    <string name="placeholder_empty_list">EMPTY LIST</string>
+    <string name="product_name">PRODUCT NAME</string>
+    <string name="product_description">PRODUCT DESCRIPTION</string>
+    <string name="product_image">PRODUCT IMAGE</string>
 </resources>

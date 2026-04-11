@@ -67,6 +67,7 @@ dependencies {
     implementation libs.google.dagger.hilt
     ksp libs.google.dagger.hilt.compiler
     implementation libs.google.firebase.database
+    implementation libs.io.coil.kt.compose
     implementation libs.jetbrains.kotlinx.coroutines
     testImplementation libs.junit
 }

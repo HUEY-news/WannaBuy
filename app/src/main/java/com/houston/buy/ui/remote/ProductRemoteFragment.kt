@@ -1,4 +1,4 @@
-package com.houston.buy.ui.productNecessary
+package com.houston.buy.ui.remote
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import com.houston.buy.tools.onClick
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProductNecessaryFragment : Fragment() {
+class ProductRemoteFragment : Fragment() {
     private var _binding: FragmentProductNecessaryBinding? = null
     private val binding get() = _binding!!
 

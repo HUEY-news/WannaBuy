@@ -1,4 +1,4 @@
-package com.houston.buy.ui.components
+package com.houston.buy.ui.compose.components.pages
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

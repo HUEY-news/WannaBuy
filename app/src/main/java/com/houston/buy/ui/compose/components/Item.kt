@@ -1,6 +1,5 @@
-package com.houston.buy.ui.components
+package com.houston.buy.ui.compose.components
 
-import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -25,16 +24,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.houston.buy.R
+import com.houston.buy.domain.model.Data
+import com.houston.buy.ui.compose.components.pages.PageBlank
 import com.houston.buy.ui.theme.InkBlue200
 import com.houston.buy.ui.theme.Theme
 import com.houston.buy.ui.theme.Typography
 
 @Composable
-fun Product(
+internal fun Item(
     modifier: Modifier = Modifier,
-    name: String,
-    description: String,
-    image: Uri?
+    data: Data
 ) {
     Row(
         modifier = modifier
@@ -48,10 +47,10 @@ fun Product(
                 .clip(RoundedCornerShape(16.dp))
                 .border(2.dp, InkBlue200, RoundedCornerShape(16.dp))
         ) {
-            if (image != null) {
+            if (data.image != null) {
                 AsyncImage(
-                    model = image,
-                    contentDescription = name,
+                    model = data.image,
+                    contentDescription = data.name,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
                 )
@@ -69,12 +68,12 @@ fun Product(
 
         Column(modifier = Modifier.weight(1f)) {
             Text(
-                text = name,
+                text = data.name,
                 style = Typography.bodyMedium
             )
-            if (description.isNotEmpty()) {
+            if (data.description.isNotEmpty()) {
                 Text(
-                    text = description,
+                    text = data.description,
                     style = Typography.labelMedium
                 )
             }
@@ -87,10 +86,12 @@ fun Product(
 private fun Preview() {
     Theme {
         PageBlank {
-            Product(
-                name = stringResource(R.string.product_name),
-                description = stringResource(R.string.product_description),
-                image = null
+            Item(
+                data = Data(
+                    name = stringResource(R.string.product_name),
+                    description = stringResource(R.string.product_description),
+                    image = null
+                )
             )
         }
     }

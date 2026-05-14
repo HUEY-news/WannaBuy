@@ -1,4 +1,4 @@
-package com.houston.buy.ui.components
+package com.houston.buy.ui.compose.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -16,12 +16,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.houston.buy.R
+import com.houston.buy.ui.compose.components.pages.PageBlank
 import com.houston.buy.ui.theme.InkBlue400
 import com.houston.buy.ui.theme.Theme
 import com.houston.buy.ui.theme.Typography
 
 @Composable
-fun PlaceholderEmptyList(
+internal fun Placeholder(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -49,7 +50,7 @@ fun PlaceholderEmptyList(
 private fun Preview() {
     Theme {
         PageBlank {
-            PlaceholderEmptyList()
+            Placeholder()
         }
     }
 }

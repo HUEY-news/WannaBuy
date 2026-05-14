@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WannaBuy</string>
 
+    <string name="header">ЗАГОЛОВОК</string>
     <string name="placeholder_empty_list">СПИСОК ПУСТ</string>
     <string name="product_name">НАЗВАНИЕ ПРОДУКТА</string>
     <string name="product_description">ОПИСАНИЕ ПРОДУКТА</string>

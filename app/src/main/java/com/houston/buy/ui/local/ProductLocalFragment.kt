@@ -1,10 +1,9 @@
-package com.houston.buy.ui.productDatabase
+package com.houston.buy.ui.local
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -14,19 +13,17 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.houston.buy.R
 import com.houston.buy.databinding.FragmentProductDatabaseBinding
-import com.houston.buy.domain.model.Product
-import com.houston.buy.domain.model.ProductDatabaseScreenState
-import com.houston.buy.presentation.ProductDatabaseViewModel
+import com.houston.buy.presentation.LocalViewModel
 import com.houston.buy.tools.onClick
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProductDatabaseFragment : Fragment() {
+class ProductLocalFragment : Fragment() {
     private var _binding: FragmentProductDatabaseBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: ProductDatabaseViewModel by viewModels()
+    private val viewModel: LocalViewModel by viewModels()
 
-    private var adapter: ProductDatabaseAdapter? = null
+    private var adapter: ProductLocalAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentProductDatabaseBinding.inflate(inflater, container, false)
@@ -37,13 +34,6 @@ class ProductDatabaseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         setupButtonListeners()
-
-        viewModel.observeScreenState().observe(viewLifecycleOwner) { screenState ->
-            when (screenState) {
-                is ProductDatabaseScreenState.Content -> showContent(screenState.data)
-                is ProductDatabaseScreenState.Empty -> showEmpty()
-            }
-        }
     }
 
     override fun onResume() {
@@ -52,7 +42,7 @@ class ProductDatabaseFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = ProductDatabaseAdapter {}
+        adapter = ProductLocalAdapter {}
         binding.recycler.adapter = adapter
         binding.recycler.layoutManager = LinearLayoutManager(requireContext())
 
@@ -96,20 +86,4 @@ class ProductDatabaseFragment : Fragment() {
         binding.buttonBack.onClick { findNavController().navigateUp() }
         binding.buttonAdd.onClick { findNavController().navigate(R.id.action_databaseFragment_to_addingFragment) }
     }
-
-    private fun showContent(data: List<Product>) {
-        showEmptyPlaceholder(false)
-        updateProductList(data)
-        showProductList(true)
-    }
-
-    private fun showEmpty() {
-        showEmptyPlaceholder(true)
-        updateProductList(listOf())
-        showProductList(false)
-    }
-
-    private fun updateProductList(list: List<Product>) { adapter?.submitList(list) }
-    private fun showProductList(isVisible: Boolean) { binding.recycler.isVisible = isVisible }
-    private fun showEmptyPlaceholder(isVisible: Boolean) { binding.placeholder.isVisible = isVisible }
 }

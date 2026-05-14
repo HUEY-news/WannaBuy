@@ -1,4 +1,4 @@
-package com.houston.buy.ui.components
+package com.houston.buy.ui.compose.components.pages
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -10,11 +10,12 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.houston.buy.ui.theme.GridCyan
+import com.houston.buy.ui.theme.MarginRed
 import com.houston.buy.ui.theme.PaperWhite
 import com.houston.buy.ui.theme.Theme
 
 @Composable
-fun PageBlank(
+internal fun PageLeft(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {
@@ -47,6 +48,14 @@ fun PageBlank(
                     )
                     y += cellSize
                 }
+
+                val marginX = cellSize * 2.5f
+                drawLine(
+                    color = MarginRed,
+                    start = Offset(marginX, 0f),
+                    end = Offset(marginX, size.height),
+                    strokeWidth = 2.dp.toPx()
+                )
             }
     ) {
         content()
@@ -57,6 +66,6 @@ fun PageBlank(
 @Composable
 private fun Preview() {
     Theme {
-        PageBlank {}
+        PageLeft {}
     }
 }

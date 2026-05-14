@@ -2,10 +2,10 @@ package com.houston.buy.di
 
 import android.content.Context
 import androidx.room.Room
-import com.houston.buy.converter.DatabaseConverter
-import com.houston.buy.data.db.ProductDatabase
-import com.houston.buy.data.impl.ProductRepositoryImpl
-import com.houston.buy.domain.api.ProductRepository
+import com.houston.buy.converter.Converter
+import com.houston.buy.data.db.Database
+import com.houston.buy.data.impl.LocalRepositoryImpl
+import com.houston.buy.domain.api.LocalRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,18 +17,17 @@ import dagger.hilt.components.SingletonComponent
 class DataModule {
 
     @Provides
-    fun provideProductRepository(database: ProductDatabase, converter: DatabaseConverter): ProductRepository {
-        return ProductRepositoryImpl(database = database, converter = converter)
+    fun provideLocalRepository(database: Database, converter: Converter): LocalRepository {
+        return LocalRepositoryImpl(database = database, converter = converter)
     }
 
     @Provides
-    fun provideProductDatabase(@ApplicationContext context: Context): ProductDatabase {
-        return Room.databaseBuilder(context, ProductDatabase::class.java, "database.db").build()
+    fun provideDatabase(@ApplicationContext context: Context): Database {
+        return Room.databaseBuilder(context, Database::class.java, "database.db").build()
     }
 
     @Provides
-    fun provideDatabaseConverter() : DatabaseConverter {
-        return DatabaseConverter()
+    fun provideConverter() : Converter {
+        return Converter()
     }
-
 }

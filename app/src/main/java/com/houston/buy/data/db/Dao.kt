@@ -6,14 +6,14 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 @Dao
-interface ProductDao {
+interface Dao {
 
     @Query("SELECT * FROM products")
-    suspend fun getItemList(): List<ProductEntity>
+    suspend fun getItemList(): List<Entity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addItemToList(entity: ProductEntity)
+    suspend fun save(entity: Entity)
 
     @Query("DELETE FROM products WHERE id = :id")
-    suspend fun removeItemFromList(id: Int)
+    suspend fun delete(id: Int)
 }

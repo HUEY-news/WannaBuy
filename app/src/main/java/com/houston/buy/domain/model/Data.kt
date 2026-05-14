@@ -1,6 +1,6 @@
 package com.houston.buy.domain.model
 
-data class Product(
+data class Data(
     val id: Int = NO_ID,
     val name: String,
     val description: String,

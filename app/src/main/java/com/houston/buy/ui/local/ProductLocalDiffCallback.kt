@@ -1,11 +1,11 @@
-package com.houston.buy.ui.productDatabase
+package com.houston.buy.ui.local
 
 import androidx.recyclerview.widget.DiffUtil
-import com.houston.buy.domain.model.Product
+import com.houston.buy.domain.model.Data
 
-class ProductDatabaseDiffCallback(
-    private val oldList: List<Product>,
-    private val newList: List<Product>
+class ProductLocalDiffCallback(
+    private val oldList: List<Data>,
+    private val newList: List<Data>
 ) : DiffUtil.Callback() {
 
     override fun getOldListSize(): Int = oldList.size
